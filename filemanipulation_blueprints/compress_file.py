@@ -95,24 +95,28 @@ def compress_files(file_paths, destination_full_path, compression):
             for file in file_paths:
                 file = file.replace(os.getcwd(), '')
                 zip.write(file)
+            print(f'Successfully compressed {file}')
 
     if compression == 'tar.bz2':
         with tarfile.open(compressed_file_name, 'w:bz2') as tar:
             for file in file_paths:
                 file = file.replace(os.getcwd(), '')
                 tar.add(file)
+            print(f'Successfully compressed {file}')
 
     if compression == 'tar':
         with tarfile.open(compressed_file_name, 'w') as tar:
             for file in file_paths:
                 file = file.replace(os.getcwd(), '')
                 tar.add(file)
+            print(f'Successfully compressed {file}')
 
     if compression == 'tar.gz':
         with tarfile.open(compressed_file_name, 'w:gz') as tar:
             for file in file_paths:
                 file = file.replace(os.getcwd(), '')
                 tar.add(file)
+            print(f'Successfully compressed {file}')
 
 
 def main():

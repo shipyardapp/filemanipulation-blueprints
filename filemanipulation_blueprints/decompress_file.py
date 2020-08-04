@@ -57,22 +57,29 @@ def decompress_file(source_full_path, destination_full_path, compression):
     Decompress a given file, using the specified compression method.
     """
 
-    compressed_file_name = f'{destination_full_path}.{compression}'
     if compression == 'zip':
         with ZipFile(source_full_path, 'r') as zip:
             zip.extractall(destination_full_path)
+        print(
+            f'Successfully extracted files from {source_full_path} to {destination_full_path}')
 
     if compression == 'tar.bz2':
         file = tarfile.open(source_full_path, 'r:bz2')
         file.extractall(path=destination_full_path)
+        print(
+            f'Successfully extracted files from {source_full_path} to {destination_full_path}')
 
     if compression == 'tar':
         file = tarfile.open(source_full_path, 'r')
         file.extractall(path=destination_full_path)
+        print(
+            f'Successfully extracted files from {source_full_path} to {destination_full_path}')
 
     if compression == 'tar.gz':
         file = tarfile.open(source_full_path, 'r:gz')
         file.extractall(path=destination_full_path)
+        print(
+            f'Successfully extracted files from {source_full_path} to {destination_full_path}')
 
 
 def create_fallback_destination_file_name(source_file_name, compression):

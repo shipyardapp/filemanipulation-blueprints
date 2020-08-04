@@ -101,7 +101,7 @@ def main():
     destination_folder_name = clean_folder_name(args.destination_folder_name)
     destination_file_name = args.destination_file_name
 
-    if destination_file_name is None:
+    if not destination_file_name:
         destination_file_name = create_fallback_destination_file_name(
             source_file_name, compression)
 

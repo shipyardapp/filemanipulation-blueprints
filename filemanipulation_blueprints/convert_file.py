@@ -228,7 +228,7 @@ def main():
     destination_folder_name = clean_folder_name(args.destination_folder_name)
     destination_file_name = args.destination_file_name
     destination_file_format = args.destination_file_format
-    if destination_file_name is None:
+    if not destination_file_name:
         destination_file_name = create_fallback_destination_file_name(
             source_file_name, destination_file_format)
     destination_full_path = combine_folder_and_file_name(
